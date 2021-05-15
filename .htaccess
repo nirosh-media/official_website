@@ -1,0 +1,18 @@
+Options +FollowSymlinks
+RewriteEngine on
+RewriteCond % ^localhost [NC]
+RewriteRule ^(.*)$ localhost/$1 [R=301,NC]
+
+RewriteRule ^/?()?$ /index.php [L]
+RewriteRule ^About?$ /about.php [L]
+RewriteRule ^About_Me?$ /about_me.php [L]
+RewriteRule ^Details/?([0-9]+)/?$ /blog-detail.php?id=$1 [L]
+RewriteRule ^Contact_Us?$ /contact.php [L]
+RewriteRule ^Playlists/Tech_Videos/Page=1?$ /blog.php?video_type=Tech_Video&&limit=1 [L]
+RewriteRule ^Playlists/Tech_Videos/Page=2?$ /blog.php?video_type=Tech_Video&&limit=2 [L]
+RewriteRule ^Playlists/Earning?$ /blog.php?video_type=Earning [L]
+RewriteRule ^Playlists/App_Review?$ /blog.php?video_type=App [L]
+
+
+RewriteRule ^events/completed?$ /views/events/completed-events.php [L]
+RewriteRule ^events/upcoming?$ /views/events/upcoming-events.php [L]
